@@ -9,6 +9,8 @@ function onReady() {
             // Code that will run on successful response
             // from the server.
             console.log(response);
+
+            //added - rendertodom
             renderToDOM(response.data);
 
             // quotesFromServer will be an Array of quotes
@@ -30,17 +32,17 @@ function onReady() {
         });
 
     // TODO Add Axios request for /songs and display on DOM
-    function renderToDOM(quotes) {
+    function renderToDOM(songs) {
         // Select the output element
-        let outputElement = document.getElementById('output');
+        let outputElement = document.getElementById('newArtistBody');
         // Empty the output element
         outputElement.innerHTML = '';
       
-        for (let quote of quotes) {
+        for (let song of songs) {
           // Create a <li> for each quote and add it to outputElement
           outputElement.innerHTML += `
             <li>
-              ${quote.text} by <i>${quote.author}</i>
+              ${song.text} by <i>${song.author}</i>
             </li>
           `;
         }

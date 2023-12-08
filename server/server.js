@@ -56,6 +56,7 @@ app.get('/artist', (req, res) => {
 app.listen(PORT, () => {
     console.log('listening on port', PORT)
 });
+
 //GET for songs
 //added song
 app.get('/song', (req, res) => {
